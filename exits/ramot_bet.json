@@ -1,0 +1,43 @@
+{
+  "neighborhood": "ramot_bet",
+  "city": "beer_sheva",
+  "name_he": "רמות ב'",
+  "name_en": "Ramot Bet",
+  "methodology": {
+    "description": "Exit = a directed edge from an interior node to a perimeter node. Perimeter roads (roads running along the neighborhood boundary) are treated as the boundary itself. A node is classified as 'perimeter' if it is within a threshold distance from the boundary polygon line. A node is 'interior' if it is inside the polygon and not perimeter. An exit is the minimal road segment that takes you from inside the neighborhood to a perimeter road.",
+    "perimeter_threshold_meters": 25,
+    "boundary_source": "neighborhoods.json polygon (raw, no buffer)"
+  },
+  "exits": [
+    {
+      "street_name": "unnamed",
+      "from": { "lat": 31.277079, "lon": 34.799235 },
+      "to": { "lat": 31.276580, "lon": 34.799019 }
+    },
+    {
+      "street_name": "שדרות הערים התאומות",
+      "from": { "lat": 31.277079, "lon": 34.799235 },
+      "to": { "lat": 31.276779, "lon": 34.799312 }
+    },
+    {
+      "street_name": "נחום שריג",
+      "from": { "lat": 31.286713, "lon": 34.808553 },
+      "to": { "lat": 31.286790, "lon": 34.808885 }
+    },
+    {
+      "street_name": "unnamed",
+      "from": { "lat": 31.277970, "lon": 34.802400 },
+      "to": { "lat": 31.277640, "lon": 34.802405 }
+    },
+    {
+      "street_name": "unnamed",
+      "from": { "lat": 31.277970, "lon": 34.802400 },
+      "to": { "lat": 31.277505, "lon": 34.801912 }
+    },
+    {
+      "street_name": "unnamed",
+      "from": { "lat": 31.289096, "lon": 34.805442 },
+      "to": { "lat": 31.289147, "lon": 34.805472 }
+    }
+  ]
+}

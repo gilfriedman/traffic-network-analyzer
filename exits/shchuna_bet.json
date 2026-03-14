@@ -1,0 +1,53 @@
+{
+  "neighborhood": "shchuna_bet",
+  "city": "beer_sheva",
+  "name_he": "שכונה ב'",
+  "name_en": "Shchuna Bet",
+  "methodology": {
+    "description": "Exit = a directed edge from an interior node to a perimeter node. Perimeter roads (roads running along the neighborhood boundary) are treated as the boundary itself. A node is classified as 'perimeter' if it is within a threshold distance from the boundary polygon line. A node is 'interior' if it is inside the polygon and not perimeter. An exit is the minimal road segment that takes you from inside the neighborhood to a perimeter road.",
+    "perimeter_threshold_meters": 25,
+    "boundary_source": "neighborhoods.json polygon (raw, no buffer)"
+  },
+  "exits": [
+    {
+      "street_name": "שמעוני",
+      "from": { "lat": 31.252277, "lon": 34.795537 },
+      "to": { "lat": 31.251487, "lon": 34.795498 }
+    },
+    {
+      "street_name": "בני אור",
+      "from": { "lat": 31.258351, "lon": 34.789124 },
+      "to": { "lat": 31.258261, "lon": 34.787852 }
+    },
+    {
+      "street_name": "שטרוק",
+      "from": { "lat": 31.252827, "lon": 34.789394 },
+      "to": { "lat": 31.252219, "lon": 34.790717 }
+    },
+    {
+      "street_name": "טשרניחובסקי",
+      "from": { "lat": 31.258146, "lon": 34.795007 },
+      "to": { "lat": 31.258340, "lon": 34.794985 }
+    },
+    {
+      "street_name": "unnamed",
+      "from": { "lat": 31.258146, "lon": 34.795007 },
+      "to": { "lat": 31.258349, "lon": 34.795241 }
+    },
+    {
+      "street_name": "חיים נחמן ביאליק",
+      "from": { "lat": 31.252716, "lon": 34.791321 },
+      "to": { "lat": 31.252143, "lon": 34.791263 }
+    },
+    {
+      "street_name": "מנדלסון",
+      "from": { "lat": 31.256646, "lon": 34.788001 },
+      "to": { "lat": 31.256758, "lon": 34.787685 }
+    },
+    {
+      "street_name": "יצחק למדן",
+      "from": { "lat": 31.256749, "lon": 34.797171 },
+      "to": { "lat": 31.258413, "lon": 34.797124 }
+    }
+  ]
+}

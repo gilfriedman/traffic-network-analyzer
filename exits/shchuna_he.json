@@ -1,0 +1,88 @@
+{
+  "neighborhood": "shchuna_he",
+  "city": "beer_sheva",
+  "name_he": "שכונה ה'",
+  "name_en": "Shchuna He",
+  "methodology": {
+    "description": "Exit = a directed edge from an interior node to a perimeter node. Perimeter roads (roads running along the neighborhood boundary) are treated as the boundary itself. A node is classified as 'perimeter' if it is within a threshold distance from the boundary polygon line. A node is 'interior' if it is inside the polygon and not perimeter. An exit is the minimal road segment that takes you from inside the neighborhood to a perimeter road.",
+    "perimeter_threshold_meters": 25,
+    "boundary_source": "neighborhoods.json polygon (raw, no buffer)"
+  },
+  "exits": [
+    {
+      "street_name": "הצבי",
+      "from": { "lat": 31.253419, "lon": 34.772263 },
+      "to": { "lat": 31.253817, "lon": 34.771725 }
+    },
+    {
+      "street_name": "גמל",
+      "from": { "lat": 31.248287, "lon": 34.778291 },
+      "to": { "lat": 31.247653, "lon": 34.778387 }
+    },
+    {
+      "street_name": "מרבד הקסמים",
+      "from": { "lat": 31.251275, "lon": 34.782557 },
+      "to": { "lat": 31.250401, "lon": 34.784242 }
+    },
+    {
+      "street_name": "יעלים",
+      "from": { "lat": 31.256332, "lon": 34.775168 },
+      "to": { "lat": 31.256996, "lon": 34.774303 }
+    },
+    {
+      "street_name": "שמשון",
+      "from": { "lat": 31.255630, "lon": 34.780723 },
+      "to": { "lat": 31.254476, "lon": 34.782780 }
+    },
+    {
+      "street_name": "משעול ניצנה",
+      "from": { "lat": 31.247989, "lon": 34.778745 },
+      "to": { "lat": 31.247653, "lon": 34.778387 }
+    },
+    {
+      "street_name": "שמשון",
+      "from": { "lat": 31.256716, "lon": 34.778699 },
+      "to": { "lat": 31.258250, "lon": 34.776180 }
+    },
+    {
+      "street_name": "בנימין מינץ",
+      "from": { "lat": 31.258447, "lon": 34.777530 },
+      "to": { "lat": 31.258595, "lon": 34.779331 }
+    },
+    {
+      "street_name": "יעלים",
+      "from": { "lat": 31.247904, "lon": 34.782724 },
+      "to": { "lat": 31.247735, "lon": 34.783313 }
+    },
+    {
+      "street_name": "סיני",
+      "from": { "lat": 31.247904, "lon": 34.782724 },
+      "to": { "lat": 31.246951, "lon": 34.781218 }
+    },
+    {
+      "street_name": "unnamed",
+      "from": { "lat": 31.247274, "lon": 34.780761 },
+      "to": { "lat": 31.247045, "lon": 34.780559 }
+    },
+    {
+      "street_name": "מעלה עקרבים",
+      "from": { "lat": 31.247362, "lon": 34.780060 },
+      "to": { "lat": 31.247138, "lon": 34.779833 }
+    },
+    {
+      "street_name": "משעול ניצנה",
+      "from": { "lat": 31.247473, "lon": 34.779389 },
+      "to": { "lat": 31.247253, "lon": 34.779170 }
+    },
+    {
+      "street_name": "unnamed",
+      "from": { "lat": 31.247187, "lon": 34.781447 },
+      "to": { "lat": 31.246951, "lon": 34.781218 }
+    },
+    {
+      "street_name": "מבצע יואב",
+      "from": { "lat": 31.257609, "lon": 34.780967 },
+      "to": { "lat": 31.258299, "lon": 34.780940 }
+    }
+  ]
+}

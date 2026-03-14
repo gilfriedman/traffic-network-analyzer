@@ -1,0 +1,78 @@
+{
+  "neighborhood": "neve_zeev",
+  "city": "beer_sheva",
+  "name_he": "נווה זאב",
+  "name_en": "Neve Ze'ev",
+  "methodology": {
+    "description": "Exit = a directed edge from an interior node to a perimeter node. Perimeter roads (roads running along the neighborhood boundary) are treated as the boundary itself. A node is classified as 'perimeter' if it is within a threshold distance from the boundary polygon line. A node is 'interior' if it is inside the polygon and not perimeter. An exit is the minimal road segment that takes you from inside the neighborhood to a perimeter road.",
+    "perimeter_threshold_meters": 25,
+    "boundary_source": "neighborhoods.json polygon (raw, no buffer)"
+  },
+  "exits": [
+    {
+      "street_name": "הנשיא הרצוג",
+      "from": { "lat": 31.234018, "lon": 34.766501 },
+      "to": { "lat": 31.233557, "lon": 34.765149 }
+    },
+    {
+      "street_name": "כיכר ה\"כפיר\"",
+      "from": { "lat": 31.241241, "lon": 34.768101 },
+      "to": { "lat": 31.241422, "lon": 34.768078 }
+    },
+    {
+      "street_name": "ג'ו אלון",
+      "from": { "lat": 31.241879, "lon": 34.774004 },
+      "to": { "lat": 31.242351, "lon": 34.776146 }
+    },
+    {
+      "street_name": "unnamed",
+      "from": { "lat": 31.241572, "lon": 34.771313 },
+      "to": { "lat": 31.241714, "lon": 34.771266 }
+    },
+    {
+      "street_name": "unnamed",
+      "from": { "lat": 31.234443, "lon": 34.773576 },
+      "to": { "lat": 31.234048, "lon": 34.773848 }
+    },
+    {
+      "street_name": "שדרות נפתלי הרץ אימבר",
+      "from": { "lat": 31.234443, "lon": 34.773576 },
+      "to": { "lat": 31.234366, "lon": 34.773884 }
+    },
+    {
+      "street_name": "יעקב פיכמן",
+      "from": { "lat": 31.236660, "lon": 34.776756 },
+      "to": { "lat": 31.236516, "lon": 34.777060 }
+    },
+    {
+      "street_name": "unnamed",
+      "from": { "lat": 31.234540, "lon": 34.773942 },
+      "to": { "lat": 31.234366, "lon": 34.773884 }
+    },
+    {
+      "street_name": "יוהנה זבוטינסקי",
+      "from": { "lat": 31.240412, "lon": 34.776147 },
+      "to": { "lat": 31.241178, "lon": 34.777297 }
+    },
+    {
+      "street_name": "אשר ברש",
+      "from": { "lat": 31.239811, "lon": 34.777834 },
+      "to": { "lat": 31.239812, "lon": 34.778198 }
+    },
+    {
+      "street_name": "פינסקר",
+      "from": { "lat": 31.234057, "lon": 34.769807 },
+      "to": { "lat": 31.232969, "lon": 34.772934 }
+    },
+    {
+      "street_name": "unnamed",
+      "from": { "lat": 31.232267, "lon": 34.770982 },
+      "to": { "lat": 31.232044, "lon": 34.771036 }
+    },
+    {
+      "street_name": "אביגדור המאירי",
+      "from": { "lat": 31.238454, "lon": 34.777526 },
+      "to": { "lat": 31.238273, "lon": 34.777885 }
+    }
+  ]
+}

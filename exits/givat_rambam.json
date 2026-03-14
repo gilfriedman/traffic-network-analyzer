@@ -1,0 +1,63 @@
+{
+  "neighborhood": "givat_rambam",
+  "city": "givatayim",
+  "name_he": "גבעת רמב\"ם",
+  "name_en": "Givat Rambam",
+  "methodology": {
+    "description": "Exit = a directed edge from an interior node to a perimeter node. Perimeter roads (roads running along the neighborhood boundary) are treated as the boundary itself. A node is classified as 'perimeter' if it is within a threshold distance from the boundary polygon line. A node is 'interior' if it is inside the polygon and not perimeter. An exit is the minimal road segment that takes you from inside the neighborhood to a perimeter road.",
+    "perimeter_threshold_meters": 25,
+    "boundary_source": "neighborhoods.json polygon (raw, no buffer)"
+  },
+  "exits": [
+    {
+      "street_name": "ההגנה",
+      "from": { "lat": 32.068130, "lon": 34.804525 },
+      "to": { "lat": 32.067978, "lon": 34.802666 }
+    },
+    {
+      "street_name": "רמב\"ם",
+      "from": { "lat": 32.070553, "lon": 34.807456 },
+      "to": { "lat": 32.070603, "lon": 34.808474 }
+    },
+    {
+      "street_name": "חנה סנש",
+      "from": { "lat": 32.068747, "lon": 34.804480 },
+      "to": { "lat": 32.068640, "lon": 34.802611 }
+    },
+    {
+      "street_name": "עברונה",
+      "from": { "lat": 32.069659, "lon": 34.807553 },
+      "to": { "lat": 32.069702, "lon": 34.808490 }
+    },
+    {
+      "street_name": "גנסין",
+      "from": { "lat": 32.071134, "lon": 34.807397 },
+      "to": { "lat": 32.071219, "lon": 34.808521 }
+    },
+    {
+      "street_name": "רחל",
+      "from": { "lat": 32.067028, "lon": 34.806398 },
+      "to": { "lat": 32.067081, "lon": 34.808455 }
+    },
+    {
+      "street_name": "הצנחנים",
+      "from": { "lat": 32.069488, "lon": 34.807573 },
+      "to": { "lat": 32.068413, "lon": 34.808449 }
+    },
+    {
+      "street_name": "דוד רמז",
+      "from": { "lat": 32.066808, "lon": 34.804518 },
+      "to": { "lat": 32.066250, "lon": 34.804580 }
+    },
+    {
+      "street_name": "ליא קניג שטולפר",
+      "from": { "lat": 32.066788, "lon": 34.803532 },
+      "to": { "lat": 32.066726, "lon": 34.802782 }
+    },
+    {
+      "street_name": "רמב\"ם",
+      "from": { "lat": 32.070267, "lon": 34.804264 },
+      "to": { "lat": 32.070528, "lon": 34.802658 }
+    }
+  ]
+}

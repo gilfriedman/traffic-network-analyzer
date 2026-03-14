@@ -1,0 +1,143 @@
+{
+  "neighborhood": "old_city",
+  "city": "beer_sheva",
+  "name_he": "העיר העתיקה",
+  "name_en": "Old City",
+  "methodology": {
+    "description": "Exit = a directed edge from an interior node to a perimeter node. Perimeter roads (roads running along the neighborhood boundary) are treated as the boundary itself. A node is classified as 'perimeter' if it is within a threshold distance from the boundary polygon line. A node is 'interior' if it is inside the polygon and not perimeter. An exit is the minimal road segment that takes you from inside the neighborhood to a perimeter road.",
+    "perimeter_threshold_meters": 25,
+    "boundary_source": "neighborhoods.json polygon (raw, no buffer)"
+  },
+  "exits": [
+    {
+      "street_name": "הפלמ\"ח",
+      "from": { "lat": 31.243386, "lon": 34.782583 },
+      "to": { "lat": 31.242833, "lon": 34.783426 }
+    },
+    {
+      "street_name": "החלוץ",
+      "from": { "lat": 31.237275, "lon": 34.787692 },
+      "to": { "lat": 31.236751, "lon": 34.787191 }
+    },
+    {
+      "street_name": "טרומפלדור יוסף",
+      "from": { "lat": 31.236431, "lon": 34.788937 },
+      "to": { "lat": 31.236041, "lon": 34.788568 }
+    },
+    {
+      "street_name": "הרצל",
+      "from": { "lat": 31.240255, "lon": 34.788491 },
+      "to": { "lat": 31.239684, "lon": 34.787959 }
+    },
+    {
+      "street_name": "מורדי הגטאות",
+      "from": { "lat": 31.236862, "lon": 34.788302 },
+      "to": { "lat": 31.236336, "lon": 34.787796 }
+    },
+    {
+      "street_name": "הפלמ\"ח",
+      "from": { "lat": 31.237126, "lon": 34.791631 },
+      "to": { "lat": 31.236884, "lon": 34.791797 }
+    },
+    {
+      "street_name": "נגבה",
+      "from": { "lat": 31.242482, "lon": 34.781079 },
+      "to": { "lat": 31.241639, "lon": 34.782339 }
+    },
+    {
+      "street_name": "דבורה",
+      "from": { "lat": 31.243239, "lon": 34.779956 },
+      "to": { "lat": 31.243644, "lon": 34.780332 }
+    },
+    {
+      "street_name": "אהוד",
+      "from": { "lat": 31.242331, "lon": 34.779118 },
+      "to": { "lat": 31.242310, "lon": 34.778781 }
+    },
+    {
+      "street_name": "יפתח הגלעדי",
+      "from": { "lat": 31.241213, "lon": 34.779918 },
+      "to": { "lat": 31.240366, "lon": 34.781180 }
+    },
+    {
+      "street_name": "ברק",
+      "from": { "lat": 31.241989, "lon": 34.780628 },
+      "to": { "lat": 31.241132, "lon": 34.781878 }
+    },
+    {
+      "street_name": "אהוד",
+      "from": { "lat": 31.241571, "lon": 34.780246 },
+      "to": { "lat": 31.240725, "lon": 34.781507 }
+    },
+    {
+      "street_name": "החלוץ",
+      "from": { "lat": 31.243372, "lon": 34.793379 },
+      "to": { "lat": 31.243657, "lon": 34.793534 }
+    },
+    {
+      "street_name": "unnamed",
+      "from": { "lat": 31.243372, "lon": 34.793379 },
+      "to": { "lat": 31.243445, "lon": 34.793799 }
+    },
+    {
+      "street_name": "סמילנסקי משה",
+      "from": { "lat": 31.237690, "lon": 34.787078 },
+      "to": { "lat": 31.238094, "lon": 34.786502 }
+    },
+    {
+      "street_name": "unnamed",
+      "from": { "lat": 31.244745, "lon": 34.782703 },
+      "to": { "lat": 31.245081, "lon": 34.782451 }
+    },
+    {
+      "street_name": "העצמאות",
+      "from": { "lat": 31.244745, "lon": 34.782703 },
+      "to": { "lat": 31.244826, "lon": 34.782348 }
+    },
+    {
+      "street_name": "קרן קיימת לישראל",
+      "from": { "lat": 31.237555, "lon": 34.792225 },
+      "to": { "lat": 31.237355, "lon": 34.792464 }
+    },
+    {
+      "street_name": "שדרות נפתלי הרץ אימבר",
+      "from": { "lat": 31.237155, "lon": 34.792188 },
+      "to": { "lat": 31.236884, "lon": 34.791797 }
+    },
+    {
+      "street_name": "unnamed",
+      "from": { "lat": 31.238685, "lon": 34.795212 },
+      "to": { "lat": 31.238374, "lon": 34.794977 }
+    },
+    {
+      "street_name": "רמב\"ם",
+      "from": { "lat": 31.238685, "lon": 34.795212 },
+      "to": { "lat": 31.238477, "lon": 34.795286 }
+    },
+    {
+      "street_name": "unnamed",
+      "from": { "lat": 31.243858, "lon": 34.781429 },
+      "to": { "lat": 31.243925, "lon": 34.781341 }
+    },
+    {
+      "street_name": "unnamed",
+      "from": { "lat": 31.244671, "lon": 34.789116 },
+      "to": { "lat": 31.244894, "lon": 34.789540 }
+    },
+    {
+      "street_name": "אסף שמחוני",
+      "from": { "lat": 31.244671, "lon": 34.789116 },
+      "to": { "lat": 31.244960, "lon": 34.789208 }
+    },
+    {
+      "street_name": "חטיבת הנגב",
+      "from": { "lat": 31.242077, "lon": 34.787066 },
+      "to": { "lat": 31.241015, "lon": 34.786067 }
+    },
+    {
+      "street_name": "עלי דיוויס",
+      "from": { "lat": 31.244686, "lon": 34.785340 },
+      "to": { "lat": 31.245553, "lon": 34.786421 }
+    }
+  ]
+}
