@@ -1,0 +1,7 @@
+osmnx
+shapely
+networkx
+pymongo
+dnspython
+python-dotenv
+certifi
