@@ -7,6 +7,7 @@ from pymongo import MongoClient
 
 from config import (
     DATABASE_NAME,
+    EDGES_COLLECTION,
     MONGODB_URI,
     NEIGHBORHOODS_COLLECTION,
     NODES_COLLECTION,
@@ -41,7 +42,7 @@ def resolve_neighborhood_key(raw_key):
 
 
 def build_neighborhood_doc(neighborhood_key, city_key, neighborhood_config, basic_stats, centrality_summary,
-                           connectivity, exit_count, area_km2):
+                           connectivity, exit_count, area_km2, boundary, exits):
     return {
         "neighborhood_key": neighborhood_key,
         "city_key": city_key,
@@ -52,11 +53,13 @@ def build_neighborhood_doc(neighborhood_key, city_key, neighborhood_config, basi
         "centrality_summary": centrality_summary,
         "exit_count": exit_count,
         "area_km2": round(area_km2, 4),
+        "boundary": boundary,
+        "exits": exits,
         "computed_at": datetime.now(timezone.utc),
     }
 
 
-def build_node_docs(graph, neighborhood_key, city_key, per_node_centrality, exit_node_ids, computed_at):
+def build_node_docs(graph, neighborhood_key, city_key, per_node_centrality, exit_node_ids, node_classes, computed_at):
     docs = []
     for node_id in graph.nodes:
         node_data = graph.nodes[node_id]
@@ -73,6 +76,25 @@ def build_node_docs(graph, neighborhood_key, city_key, per_node_centrality, exit
             "betweenness_centrality": centrality["betweenness"],
             "closeness_centrality": centrality["closeness"],
             "is_exit_node": node_id in exit_node_ids,
+            "classification": node_classes.get(node_id, "exterior"),
+            "computed_at": computed_at,
+        })
+    return docs
+
+
+def build_edge_docs(graph, neighborhood_key, city_key, node_classes, computed_at):
+    docs = []
+    for node_u, node_v in graph.edges():
+        u_data, v_data = graph.nodes[node_u], graph.nodes[node_v]
+        is_exit = node_classes.get(node_u) == "interior" and node_classes.get(node_v) == "perimeter"
+        docs.append({
+            "neighborhood_key": neighborhood_key,
+            "city_key": city_key,
+            "from_lat": u_data["y"],
+            "from_lng": u_data["x"],
+            "to_lat": v_data["y"],
+            "to_lng": v_data["x"],
+            "is_exit_edge": is_exit,
             "computed_at": computed_at,
         })
     return docs
@@ -81,6 +103,7 @@ def build_node_docs(graph, neighborhood_key, city_key, per_node_centrality, exit
 def create_indexes(db):
     db[NODES_COLLECTION].create_index([("location", "2dsphere")])
     db[NODES_COLLECTION].create_index("neighborhood_key")
+    db[EDGES_COLLECTION].create_index("neighborhood_key")
     db[NEIGHBORHOODS_COLLECTION].create_index("neighborhood_key", unique=True)
     logger.info("Indexes created.")
 
@@ -112,10 +135,17 @@ def process_neighborhood(db, neighborhood_key_raw, city_key, neighborhood_config
 
     computed_at = datetime.now(timezone.utc)
 
+    exit_details = [
+        {"street_name": edge["street_name"], "from_coords": list(edge["from_coords"]), "to_coords": list(edge["to_coords"])}
+        for edge in exits
+    ]
+
     neighborhood_doc = build_neighborhood_doc(
         neighborhood_key, city_key, neighborhood_config,
         basic_stats, centrality_summary, connectivity,
         len(exits), area_km2,
+        neighborhood_config["boundary"]["coordinates"][0],
+        exit_details,
     )
     db[NEIGHBORHOODS_COLLECTION].update_one(
         {"neighborhood_key": neighborhood_key},
@@ -124,11 +154,17 @@ def process_neighborhood(db, neighborhood_key_raw, city_key, neighborhood_config
     )
     logger.info(f"  Neighborhood doc upserted.")
 
-    node_docs = build_node_docs(graph, neighborhood_key, city_key, per_node_centrality, exit_node_ids, computed_at)
+    node_docs = build_node_docs(graph, neighborhood_key, city_key, per_node_centrality, exit_node_ids, node_classes, computed_at)
     db[NODES_COLLECTION].delete_many({"neighborhood_key": neighborhood_key})
     if node_docs:
         db[NODES_COLLECTION].insert_many(node_docs)
     logger.info(f"  {len(node_docs)} node docs inserted.")
+
+    edge_docs = build_edge_docs(graph, neighborhood_key, city_key, node_classes, computed_at)
+    db[EDGES_COLLECTION].delete_many({"neighborhood_key": neighborhood_key})
+    if edge_docs:
+        db[EDGES_COLLECTION].insert_many(edge_docs)
+    logger.info(f"  {len(edge_docs)} edge docs inserted.")
 
 
 def main():
