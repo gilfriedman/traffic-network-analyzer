@@ -73,10 +73,11 @@ def _largest_connected_subgraph(graph):
 
 
 def calculate_connectivity(graph):
+    resilience_graph = _largest_connected_subgraph(graph)
     logger.info("    Computing edge connectivity...")
-    edge_conn = nx.edge_connectivity(_largest_connected_subgraph(graph))
+    edge_conn = nx.edge_connectivity(resilience_graph)
     logger.info("    Computing average node connectivity (may take a while)...")
-    avg_node_conn = nx.average_node_connectivity(graph)
+    avg_node_conn = nx.average_node_connectivity(resilience_graph)
     return {
         "avg_node_connectivity": round(avg_node_conn, 4),
         "edge_connectivity": edge_conn,
