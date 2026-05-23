@@ -63,9 +63,18 @@ def summarize_centrality(per_node_centrality):
     }
 
 
+def _largest_connected_subgraph(graph):
+    undirected = graph.to_undirected()
+    components = list(nx.connected_components(undirected))
+    if len(components) <= 1:
+        return undirected
+    largest = max(components, key=len)
+    return undirected.subgraph(largest)
+
+
 def calculate_connectivity(graph):
     logger.info("    Computing edge connectivity...")
-    edge_conn = nx.edge_connectivity(graph)
+    edge_conn = nx.edge_connectivity(_largest_connected_subgraph(graph))
     logger.info("    Computing average node connectivity (may take a while)...")
     avg_node_conn = nx.average_node_connectivity(graph)
     return {
